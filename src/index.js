@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import { yellow, styles } from 'ansi-colors';
 
 function Square(props) {
    return (
