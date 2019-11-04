@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 function Square(props) {
+  
   return (
       <button 
-        className={"square" + (props.isWinning ? ".square--winner" : null)} 
+        className="square"
         onClick={props.onClick}
        >
         {props.value}
@@ -17,7 +18,7 @@ function Square(props) {
     renderSquare(i) {
         return (
             <Square
-              isWinning={this.props.winningSquares.includes(i)}
+            //   isWinning={this.props.winningSquares.includes(i)}
               key={"square " + i}
               value={this.props.squares[i]}
               onClick={() => this.props.onClick(i)}
@@ -41,29 +42,7 @@ function Square(props) {
         );
       }
       
-    // eslint-disable-next-line no-dupe-class-members
-    // render() {
-    //   return (
-    //     <div>
-    //       <div className="board-row">
-    //         {this.renderSquare(0)}
-    //         {this.renderSquare(1)}
-    //         {this.renderSquare(2)}
-    //       </div>
-    //       <div className="board-row">
-    //         {this.renderSquare(3)}
-    //         {this.renderSquare(4)}
-    //         {this.renderSquare(5)}
-    //       </div>
-    //       <div className="board-row">
-    //         {this.renderSquare(6)}
-    //         {this.renderSquare(7)}
-    //         {this.renderSquare(8)}
-    //       </div>
-    //     </div>
-    //   );
-    // }
-
+   
     render() {
         return (
           <div>
@@ -113,6 +92,7 @@ function Square(props) {
     }
 
     render() {
+      const header = <h1>React-Tac-Toe</h1>;
       const history = this.state.history;
       const current = history[this.state.stepNumber];
       const winner = calculateWinner(current.squares);
@@ -139,13 +119,14 @@ function Square(props) {
         <div className="game">
           <div className="game-board">
           <Board
-            winningSquares={winner ? winner.line : []}
+            // winningSquares={winner ? winner.line : []}
             squares={current.squares}
             onClick={i => this.handleClick(i)}
           />
 
           </div>
           <div className="game-info">
+              <div>{header}</div>
             <div>{status}</div>
             <ol>{moves}</ol>
           </div>
@@ -158,7 +139,7 @@ function Square(props) {
   
   ReactDOM.render(
     <Game />,
-    document.getElementById('root')
+    document.getElementById('root'),
   );
   
   function calculateWinner(squares) {
