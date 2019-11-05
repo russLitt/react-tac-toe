@@ -65,6 +65,7 @@ function Square(props) {
               stepNumber: 0,
               xIsNext: true,
           };
+          this.baseState = this.state
       }
 
       handleClick(i) {
@@ -96,25 +97,35 @@ function Square(props) {
       const history = this.state.history;
       const current = history[this.state.stepNumber];
       const winner = calculateWinner(current.squares);
+      // const resetGame = () => {
+      //   this.setState(this.baseState)
+      // }
 
       const moves = history.map((step, move) => {
           const desc = move ?
           'go to move #' + move :
-          'go to game start';
+          'go to game start'
+      
+      
+         
           return (
               <li key={move}>
                   <button onClick={() => this.jumpTo(move)}>{desc}</button>
               </li>
           )
+        
       });
+      
 
       let status;
       if (winner) {
           status = "Winner: " + winner +
-          "!! You won in " + this.state.stepNumber + " moves";
+          " - Victory in " + this.state.stepNumber + " moves!";
+
+
          
-         console.log(this.state.stepNumber);
-          
+        // this.setState(this.baseState)
+
       } else {
           status = "Next Player: " + (this.state.xIsNext ? 'X' : 'O');
       }
