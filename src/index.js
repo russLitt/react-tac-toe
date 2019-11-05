@@ -92,7 +92,7 @@ function Square(props) {
     }
 
     render() {
-      const header = <h1>HEllo</h1>;
+      const header = <h1>React-Tac-Toe</h1>;
       const history = this.state.history;
       const current = history[this.state.stepNumber];
       const winner = calculateWinner(current.squares);
@@ -111,6 +111,8 @@ function Square(props) {
       let status;
       if (winner) {
           status = "Winner: " + winner;
+          //setTimeout(() => {this.reset()}, 1000);
+          
       } else {
           status = "Next Player: " + (this.state.xIsNext ? 'X' : 'O');
       }
@@ -118,17 +120,19 @@ function Square(props) {
       return (
         <div className="game">
           <div className="game-board">
+          <div>{header}</div>
           <Board
             // winningSquares={winner ? winner.line : []}
             squares={current.squares}
             onClick={i => this.handleClick(i)}
           />
 
-          </div>
           <div className="game-info">
             <div>{status}</div>
             <ol>{moves}</ol>
           </div>
+          </div>
+          
         </div>
       );
     }
