@@ -110,8 +110,10 @@ function Square(props) {
 
       let status;
       if (winner) {
-          status = "Winner: " + winner;
-          //setTimeout(() => {this.reset()}, 1000);
+          status = "Winner: " + winner +
+          "!! You won in " + this.state.stepNumber + " moves";
+         
+         console.log(this.state.stepNumber);
           
       } else {
           status = "Next Player: " + (this.state.xIsNext ? 'X' : 'O');
