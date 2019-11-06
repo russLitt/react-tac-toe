@@ -53,7 +53,6 @@ function Square(props) {
       }
     }
 
-  
   class Game extends React.Component {
       constructor(props) {
           super(props);
@@ -96,21 +95,19 @@ function Square(props) {
       const history = this.state.history;
       const current = history[this.state.stepNumber];
       const winner = calculateWinner(current.squares);
-      const resetGame = () => {
-        this.setState(this.baseState)
-      }
+      // const resetGame = () => {
+      //   this.setState(this.baseState)
+      // }
 
-    
       const moves = history.map((step, move) => {
           const desc = move ?
           'go to move #' + move :
           'restart game'
 
-         
-      
       if (this.state.stepNumber === 0) {
-     
-    
+        return (
+          <div></div>
+        )
       }
          else {
           return (
@@ -121,18 +118,15 @@ function Square(props) {
          }
       });
       
-
       let status;
-      if (winner) {
-          status = "Winner: " + winner +
-          " - Victory in " + this.state.stepNumber + " moves!";
-
-
-         
-        // this.setState(this.baseState)
-
-      } else {
-          status = "Next Player: " + (this.state.xIsNext ? 'X' : 'O');
+      if (this.state.stepNumber === 9 && winner === null) {
+        status = "game was a draw"
+      } else if (winner === null){
+        status = "Next Player: " + (this.state.xIsNext ? 'X' : 'O');
+      }
+      else {
+        status = "Winner: " + winner +
+        " - Victory in " + this.state.stepNumber + " moves!";
       }
       
       return (
@@ -140,7 +134,6 @@ function Square(props) {
           <div className="game-board">
           <div>{header}</div>
           <Board
-            // winningSquares={winner ? winner.line : []}
             squares={current.squares}
             onClick={i => this.handleClick(i)}
           />
