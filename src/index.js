@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 function Square(props) {
-  
   return (
       <button 
         className="square"
@@ -97,23 +96,29 @@ function Square(props) {
       const history = this.state.history;
       const current = history[this.state.stepNumber];
       const winner = calculateWinner(current.squares);
-      // const resetGame = () => {
-      //   this.setState(this.baseState)
-      // }
+      const resetGame = () => {
+        this.setState(this.baseState)
+      }
 
+    
       const moves = history.map((step, move) => {
           const desc = move ?
           'go to move #' + move :
-          'go to game start'
-      
-      
+          'restart game'
+
          
+      
+      if (this.state.stepNumber === 0) {
+     
+    
+      }
+         else {
           return (
               <li key={move}>
                   <button onClick={() => this.jumpTo(move)}>{desc}</button>
               </li>
           )
-        
+         }
       });
       
 
