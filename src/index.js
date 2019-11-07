@@ -17,7 +17,6 @@ function Square(props) {
     renderSquare(i) {
         return (
             <Square
-            //   isWinning={this.props.winningSquares.includes(i)}
               key={"square " + i}
               value={this.props.squares[i]}
               onClick={() => this.props.onClick(i)}
@@ -41,7 +40,6 @@ function Square(props) {
         );
       }
       
-   
     render() {
         return (
           <div>
@@ -63,7 +61,6 @@ function Square(props) {
               stepNumber: 0,
               xIsNext: true,
           };
-          this.baseState = this.state
       }
 
       handleClick(i) {
@@ -95,9 +92,6 @@ function Square(props) {
       const history = this.state.history;
       const current = history[this.state.stepNumber];
       const winner = calculateWinner(current.squares);
-      // const resetGame = () => {
-      //   this.setState(this.baseState)
-      // }
 
       const moves = history.map((step, move) => {
           const desc = move ?
@@ -118,15 +112,17 @@ function Square(props) {
          }
       });
       
+
       let status;
-      if (this.state.stepNumber === 9 && winner === null) {
-        status = "game was a draw"
-      } else if (winner === null){
-        status = "Next Player: " + (this.state.xIsNext ? 'X' : 'O');
+      if (winner) {
+        status = "Winner: " + winner +
+        " - in " + this.state.stepNumber + " moves!";
+      } 
+      else if (this.state.stepNumber === 9 && winner === null) {
+        status = "Draw: no winner"
       }
       else {
-        status = "Winner: " + winner +
-        " - Victory in " + this.state.stepNumber + " moves!";
+        status = "Next Player: " + (this.state.xIsNext ? 'X' : 'O');
       }
       
       return (

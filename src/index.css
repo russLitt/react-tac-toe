@@ -1,6 +1,6 @@
 body {
     font: 18px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
+    margin-left: 60px;
   }
   
   ol, ul {
@@ -21,7 +21,7 @@ body {
     background: #fff;
     border: 2px solid #999;
     float: left;
-    font-size: 32px;
+    font-size: 34px;
     font-weight: bold;
     line-height: 34px;
     height: 44px;
