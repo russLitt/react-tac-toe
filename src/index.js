@@ -57,6 +57,8 @@ function Square(props) {
           this.state = {
               history: [{
                 squares: Array(9).fill(null),
+                xScore: 0,
+                oScore: 0,
               }],
               stepNumber: 0,
               xIsNext: true,
@@ -117,6 +119,14 @@ function Square(props) {
       if (winner) {
         status = "Winner: " + winner +
         " - in " + this.state.stepNumber + " moves!";
+
+        if (winner === 'X') {
+          for (var x = 1; x <= 100; x++) {
+           status = "Games Won: " + x;
+           
+          }
+        }
+
       } 
       else if (this.state.stepNumber === 9 && winner === null) {
         status = "Draw: no winner"
@@ -124,11 +134,13 @@ function Square(props) {
       else {
         status = "Next Player: " + (this.state.xIsNext ? 'X' : 'O');
       }
+
       
       return (
         <div className="game">
           <div className="game-board">
           <div>{header}</div>
+          
           <Board
             squares={current.squares}
             onClick={i => this.handleClick(i)}
