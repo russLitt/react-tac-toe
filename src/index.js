@@ -120,13 +120,6 @@ function Square(props) {
         status = "Winner: " + winner +
         " - in " + this.state.stepNumber + " moves!";
 
-        if (winner === 'X') {
-          for (var x = 1; x <= 100; x++) {
-           status = "Games Won: " + x;
-           
-          }
-        }
-
       } 
       else if (this.state.stepNumber === 9 && winner === null) {
         status = "Draw: no winner"
@@ -145,6 +138,13 @@ function Square(props) {
             squares={current.squares}
             onClick={i => this.handleClick(i)}
           />
+          
+          <div className="scores">
+            <p>Player X: {this.state.xScore}</p>
+            <p>Player Y: {this.state.oScore}</p>
+          </div>
+          
+          
 
           <div className="game-info">
             <div>{status}</div>
