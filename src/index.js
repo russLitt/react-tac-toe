@@ -119,6 +119,7 @@ function Square(props) {
       if (winner) {
         status = "Winner: " + winner +
         " - in " + this.state.stepNumber + " moves!";
+        winner.style.color = "green";
 
       } 
       else if (this.state.stepNumber === 9 && winner === null) {
@@ -175,6 +176,7 @@ function Square(props) {
       [0, 4, 8],
       [2, 4, 6],
     ];
+    console.log(squares);
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
