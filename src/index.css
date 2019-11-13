@@ -19,6 +19,7 @@ body {
   
   .square {
     background: #fff;
+    color: rgb(2, 73, 131);
     border: 2px solid #999;
     float: left;
     font-size: 34px;
@@ -33,7 +34,7 @@ body {
   }
 
   .square-winner {
-    background-color: green;
+    background: green;
 }
   
   .square:focus {
@@ -53,7 +54,7 @@ body {
     margin-top: 30px;
   }
 
-  button {
-    background-color: blue;
-    background: #ddd;
+  .btn-history {
+   color: white;
+   background-color: rgb(2, 73, 131);
   }

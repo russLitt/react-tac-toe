@@ -108,7 +108,7 @@ function Square(props) {
          else {
           return (
               <li key={move}>
-                  <button onClick={() => this.jumpTo(move)}>{desc}</button>
+                  <button className="btn-history" onClick={() => this.jumpTo(move)}>{desc}</button>
               </li>
           )
          }
@@ -119,7 +119,7 @@ function Square(props) {
       if (winner) {
         status = "Winner: " + winner +
         " - in " + this.state.stepNumber + " moves!";
-        winner.style.color = "green";
+        console.log(calculateWinner)
 
       } 
       else if (this.state.stepNumber === 9 && winner === null) {
