@@ -17,6 +17,7 @@ function Square(props) {
     renderSquare(i) {
         return (
             <Square
+              className="board-squares"
               key={"square " + i}
               value={this.props.squares[i]}
               onClick={() => this.props.onClick(i)}
@@ -119,8 +120,7 @@ function Square(props) {
       if (winner) {
         status = "Winner: " + winner +
         " - in " + this.state.stepNumber + " moves!";
-        console.log(calculateWinner)
-
+        //console.log(this.current.squares);
       } 
       else if (this.state.stepNumber === 9 && winner === null) {
         status = "Draw: no winner"
@@ -145,8 +145,7 @@ function Square(props) {
             <p>Player Y: {this.state.oScore}</p>
           </div>
           
-          
-
+        
           <div className="game-info">
             <div>{status}</div>
             <ol>{moves}</ol>
@@ -176,11 +175,11 @@ function Square(props) {
       [0, 4, 8],
       [2, 4, 6],
     ];
-    console.log(squares);
     for (let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
         return squares[a];
+
       }
     }
     return null;
