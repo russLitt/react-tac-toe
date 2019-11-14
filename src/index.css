@@ -33,7 +33,7 @@ body {
     width: 44px;
   }
 
-  .square-winner {
+  .square.winner {
     background: green;
 }
   
