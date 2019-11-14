@@ -124,7 +124,6 @@ function Square(props) {
       if (winner) {
         status = "Winner: " + winner +
         " - in " + this.state.stepNumber + " moves!";
-       
       } 
       else if (this.state.stepNumber === 9 && winner === null) {
         status = "Draw: no winner"
@@ -145,10 +144,10 @@ function Square(props) {
             winLine={winInfo.line}
           />
           
-          <div className="scores">
+          {/* <div className="scores">
             <p>Player X: {this.state.xScore}</p>
             <p>Player Y: {this.state.oScore}</p>
-          </div>
+          </div> */}
           
         
           <div className="game-info">
