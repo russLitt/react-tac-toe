@@ -19,7 +19,6 @@ function Square(props) {
       const winLine = this.props.winLine;
         return (
             <Square
-              className="board-squares"
               key={"square " + i}
               value={this.props.squares[i]}
               onClick={() => this.props.onClick(i)}
