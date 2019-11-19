@@ -27,8 +27,8 @@ body {
     font-weight: bold;
     line-height: 34px;
     height: 52px;
-    margin-right: 1px;
-    margin-top: 1px;
+    /* margin-right: 1px;
+    margin-top: 1px; */
     padding: 0;
     width: 52px;
     box-shadow: 5px 10px 18px #999;

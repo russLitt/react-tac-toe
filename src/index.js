@@ -118,7 +118,6 @@ function Square(props) {
           )
          }
       });
-      
 
       let status;
       if (winner) {
@@ -132,7 +131,6 @@ function Square(props) {
         status = "Next Player: " + (this.state.xIsNext ? 'X' : 'O');
       }
 
-      
       return (
         <div className="game">
           <div className="game-board">
