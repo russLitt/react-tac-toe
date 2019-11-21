@@ -132,7 +132,6 @@ function Square(props) {
 
       return (
         <div className="game">
-          <div className="game-board">
           <div>{header}</div>
           
           <Board
@@ -151,7 +150,7 @@ function Square(props) {
             <div>{status}</div>
             <ol>{moves}</ol>
           </div>
-          </div>
+         
           
         </div>
       );
