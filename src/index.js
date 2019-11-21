@@ -150,8 +150,7 @@ function Square(props) {
             <div>{status}</div>
             <ol>{moves}</ol>
           </div>
-         
-          
+      
         </div>
       );
     }
