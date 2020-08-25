@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components'
 import './index.css';
 
 function Square(props) {
@@ -45,7 +46,7 @@ function Square(props) {
       
     render() {
         return (
-          <div>
+          <div className="board">
             {this.renderRows(0)}
             {this.renderRows(3)}
             {this.renderRows(6)}
