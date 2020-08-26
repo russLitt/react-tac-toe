@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import styled from 'styled-components'
 import './index.css';
 
@@ -46,10 +47,12 @@ function Square(props) {
       
     render() {
         return (
+          <div className="row">
           <div className="board">
             {this.renderRows(0)}
             {this.renderRows(3)}
             {this.renderRows(6)}
+          </div>
           </div>
         );
       }
@@ -94,7 +97,7 @@ function Square(props) {
     }
 
     render() {
-      const header = <h1>React-Tac-Toe</h1>;
+      const header = <h1 className="jumbotron">React-Tac-Toe</h1>;
       const history = this.state.history;
       const current = history[this.state.stepNumber];
       const winInfo = calculateWinner(current.squares);
@@ -111,7 +114,7 @@ function Square(props) {
         )
       }
          else {
-          return (
+          return (  
               <li key={move}>
                   <button className="btn-history" onClick={() => this.jumpTo(move)}>{desc}</button>
               </li>
