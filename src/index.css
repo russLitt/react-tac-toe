@@ -9,6 +9,12 @@ body {
     padding-left: 10px;
   }
 
+  .jumbotron {
+    font-weight: bold;
+    margin-top: -38px;
+    height: 80px;
+  }
+
   .board {
     margin: auto;
   }
@@ -40,8 +46,8 @@ body {
   }
 
   .square:hover {
-      border-color: SteelBlue;
-      background: LightSteelBlue;
+      /* border-color: SteelBlue; */
+      background: lightgray;
     }
 
   .square.highlight {
@@ -60,6 +66,10 @@ body {
     margin-top: 30px;
     /* margin-left: 20px; */
     text-align: center;
+  }
+
+  .btn-history-group {
+    margin-bottom: 20px;
   }
 
   .btn-history {

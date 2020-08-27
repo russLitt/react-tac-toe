@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import styled from 'styled-components'
 import './index.css';
 
 function Square(props) {
@@ -47,12 +46,14 @@ function Square(props) {
       
     render() {
         return (
-          <div className="row">
-          <div className="board">
-            {this.renderRows(0)}
-            {this.renderRows(3)}
-            {this.renderRows(6)}
-          </div>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="board">
+                {this.renderRows(0)}
+                {this.renderRows(3)}
+                {this.renderRows(6)}
+              </div>
+            </div>
           </div>
         );
       }
@@ -114,10 +115,10 @@ function Square(props) {
         )
       }
          else {
-          return (  
+          return (
               <li key={move}>
                   <button className="btn-history" onClick={() => this.jumpTo(move)}>{desc}</button>
-              </li>
+                </li>
           )
          }
       });
@@ -149,7 +150,6 @@ function Square(props) {
             <p>Player Y: {this.state.oScore}</p>
           </div> */}
           
-        
           <div className="game-info">
             <div>{status}</div>
             <ol>{moves}</ol>
